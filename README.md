@@ -4,6 +4,28 @@
 
 The project demonstrates a custom PHP MVC application with team-based communication, real-time messaging features, browser-based video rooms, screen sharing, file attachments, voice notes, user invitations, and authentication.
 
+## 📸 Screenshots
+
+### Dashboard
+
+The main redAlien collaboration dashboard for accessing teams, channels, conversations, and workspace features.
+
+![redAlien Dashboard](docs/screenshots/dashboard.png)
+
+### Login Experience
+
+redAlien's custom authentication interface and branded Alien login experience.
+
+![redAlien Login](docs/screenshots/login-alien.png)
+
+### Video Room & Screen Sharing
+
+Browser-based video meeting room with WebRTC communication and screen-sharing controls.
+
+![redAlien Video Room](docs/screenshots/video-room.png)
+
+---
+
 ## 🚀 Features
 
 - User registration and authentication
