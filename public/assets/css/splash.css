@@ -1,0 +1,437 @@
+.ra-splash {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: grid;
+    place-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(25, 84, 30, .16),
+            transparent 30rem
+        ),
+        #000000;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+}
+
+.ra-splash.ra-splash-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+.ra-splash-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: .22;
+
+    background-image:
+        linear-gradient(
+            rgba(119, 255, 63, .06) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(119, 255, 63, .06) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    animation: raSplashGridMove 8s linear infinite;
+}
+
+@keyframes raSplashGridMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(55px);
+    }
+}
+
+
+.ra-splash-particles {
+    position: absolute;
+    inset: 0;
+
+    opacity: .6;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(119,255,63,.8) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 70% 18%,
+            rgba(119,255,63,.6) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 84% 70%,
+            rgba(119,255,63,.7) 0 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle at 34% 82%,
+            rgba(119,255,63,.5) 0 1px,
+            transparent 2px
+        );
+
+    background-size:
+        230px 230px,
+        300px 300px,
+        270px 270px,
+        320px 320px;
+
+    animation: raSplashParticles 14s linear infinite;
+}
+
+@keyframes raSplashParticles {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-35px, 25px, 0);
+    }
+}
+
+
+.ra-splash-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 580px);
+
+    text-align: center;
+}
+
+
+.ra-splash-logo-wrap {
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    margin: 0 auto 24px;
+
+    overflow: hidden;
+}
+
+
+.ra-splash-logo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    opacity: 0;
+    transform: scale(.72);
+
+    filter:
+        brightness(.18)
+        drop-shadow(0 0 0 rgba(119,255,63,0));
+
+    animation:
+        raAlienWake 2.1s ease forwards,
+        raAlienPulse 1.8s ease-in-out 2.1s infinite;
+}
+
+@keyframes raAlienWake {
+    0% {
+        opacity: 0;
+        transform: scale(.72);
+        filter:
+            brightness(.1)
+            drop-shadow(0 0 0 rgba(119,255,63,0));
+    }
+
+    35% {
+        opacity: .55;
+        transform: scale(.88);
+        filter:
+            brightness(.5)
+            drop-shadow(0 0 10px rgba(119,255,63,.25));
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.04);
+        filter:
+            brightness(1.15)
+            drop-shadow(0 0 28px rgba(119,255,63,.75));
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter:
+            brightness(1)
+            drop-shadow(0 0 22px rgba(119,255,63,.55));
+    }
+}
+
+@keyframes raAlienPulse {
+    0%,
+    100% {
+        filter:
+            brightness(1)
+            drop-shadow(0 0 18px rgba(119,255,63,.45));
+    }
+
+    50% {
+        filter:
+            brightness(1.25)
+            drop-shadow(0 0 36px rgba(119,255,63,.9));
+    }
+}
+
+
+.ra-splash-scan-line {
+    position: absolute;
+    left: -25%;
+    top: -15%;
+
+    width: 150%;
+    height: 3px;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(119,255,63,.45),
+            #ffffff,
+            rgba(119,255,63,.9),
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(119,255,63,.9),
+        0 0 22px rgba(119,255,63,.75);
+
+    animation: raSplashScan 1.5s ease 1.2s forwards;
+}
+
+@keyframes raSplashScan {
+    0% {
+        top: -15%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+
+.ra-splash-title {
+    margin: 0;
+
+    font-size: clamp(3rem, 8vw, 5.8rem);
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: -.075em;
+}
+
+
+.ra-splash-red {
+    position: relative;
+
+    display: inline-block;
+
+    color: #ff252d;
+
+    opacity: 0;
+
+    text-shadow:
+        0 0 12px rgba(255, 37, 45, .55);
+
+    animation:
+        raRedAppear .35s ease 1.5s forwards,
+        raRedFlicker .16s linear 1.85s 7;
+}
+
+@keyframes raRedAppear {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes raRedFlicker {
+    0%,
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    25% {
+        opacity: .35;
+        transform: translateX(-3px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    75% {
+        opacity: .6;
+        transform: translateX(-2px);
+    }
+}
+
+
+.ra-splash-white {
+    display: inline-block;
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    transform: translateX(18px);
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,.55);
+
+    animation: raAlienTextFade .8s ease 2.25s forwards;
+}
+
+@keyframes raAlienTextFade {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.ra-splash-status {
+    min-height: 24px;
+
+    margin: 25px 0 17px;
+
+    color: #77ff3f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: clamp(.75rem, 2vw, .95rem);
+    font-weight: 700;
+
+    letter-spacing: .07em;
+
+    text-shadow:
+        0 0 10px rgba(119,255,63,.38);
+}
+
+
+.ra-splash-progress-wrap {
+    width: min(100%, 430px);
+    margin: 0 auto;
+}
+
+
+.ra-splash-progress-track {
+    width: 100%;
+    height: 7px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(119,255,63,.48);
+    border-radius: 999px;
+
+    background: rgba(119,255,63,.07);
+
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,.8),
+        0 0 15px rgba(119,255,63,.08);
+}
+
+
+.ra-splash-progress-fill {
+    width: 0;
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1f8c13,
+            #77ff3f,
+            #d4ff83
+        );
+
+    box-shadow:
+        0 0 16px rgba(119,255,63,.7);
+
+    transition: width .35s ease;
+}
+
+
+#raSplashPercent {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #77ff3f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: .72rem;
+}
+
+
+.ra-dashboard-waiting {
+    opacity: 0;
+    transform: scale(.985);
+}
+
+.ra-dashboard-ready {
+    opacity: 1;
+    transform: scale(1);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .ra-splash *,
+    .ra-splash::before,
+    .ra-splash::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

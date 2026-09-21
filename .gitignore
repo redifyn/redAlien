@@ -1,0 +1,24 @@
+/vendor/
+/node_modules/
+
+.env
+.env.*
+
+*.log
+
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/
+
+*.zip
+
+# User uploaded files
+/public/uploads/
+
+# Generated team images
+/public/assets/images/teams/
+
+/config/config.php
+/database/redalien.sql

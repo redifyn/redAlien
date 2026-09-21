@@ -1,0 +1,16 @@
+:root{--bg:#07100b;--panel:#0c1711;--green:#6CFF42;--line:#1e4d2a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#0a1810,#040806);color:#fff;font-family:Segoe UI,sans-serif}
+.sidebar{position:fixed;left:0;top:0;width:260px;height:100vh;background:#08110c;border-right:1px solid #18321d;padding:25px}
+.logo{font-size:32px;font-weight:700;color:var(--green);margin-bottom:30px}
+.logo span{color:#fff}
+.sidebar a{display:block;color:#d7d7d7;text-decoration:none;padding:14px 18px;border-radius:14px;margin-bottom:10px}
+.sidebar a.active,.sidebar a:hover{background:#12341d;color:var(--green);border:1px solid var(--green)}
+.status{margin-top:40px;padding:18px;background:#0d1912;border:1px solid #21522b;border-radius:18px}
+.main{margin-left:260px;padding:25px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}
+.topbar input{width:50%;background:#0d1712;border:1px solid #234c2d;color:#fff;padding:12px 18px;border-radius:14px}
+.icons i{font-size:26px;color:var(--green);margin-left:20px}
+.stat,.panel{background:rgba(12,23,17,.95);border:1px solid #24552e;border-radius:20px;padding:24px;box-shadow:0 0 20px rgba(108,255,66,.08)}
+h1{margin-bottom:30px}
+.stat h2{color:var(--green);font-size:46px}
+.panel h4{color:var(--green);margin-bottom:20px}
